@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfortable Chest Binder for Daily Wear | True Self</title>
+    <!-- Tailwind CSS 引入 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts 引入 (Inter 现代高级字体) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome 图标，用于增加信任感 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbfaf8; /* 极简优雅燕麦暖白底色 */
+        }
+    </style>
+</head>
+<body class="text-stone-800 antialiased">
+
+    <!-- 顶部公告栏 (提示免运费，刺激消费) -->
+    <div class="bg-stone-900 text-white text-[11px] py-2 text-center font-semibold tracking-widest">
+        ⚡ FREE WORLDWIDE SHIPPING ON ALL ORDERS THIS WEEK!
+    </div>
+
+    <!-- 主容器 -->
+    <main class="max-w-4xl mx-auto px-4 py-6 md:py-12">
+        
+        <!-- 品牌头部 (全新社群共鸣品牌形象) -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-stone-100 mb-3 border border-stone-200">
+                <svg class="w-8 h-8 text-stone-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+            </div>
+            <h1 class="text-lg font-bold tracking-widest uppercase">TRUE SELF</h1>
+            <p class="text-xs text-stone-500 mt-1">Flat. Confident. Free to be you. 🖤</p>
+        </header>
+
+        <!-- 商品两栏布局 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 bg-white p-4 md:p-8 rounded-3xl border border-stone-100 shadow-sm">
+            
+            <!-- 左侧：多图轮播区域 (经典1:1正方形自适应比例) -->
+            <div class="space-y-4">
+                <!-- 主图容器 (完美适配 1:1 照片) -->
+                <div class="relative aspect-square w-full rounded-2xl overflow-hidden bg-stone-50 border border-stone-100">
+                    <img id="mainImage" src="ade7b39a-01dd-40e3-bb8e-af32d821998b.png" alt="Product Main Image" class="w-full h-full object-cover transition-all duration-300">
+                    <span class="absolute top-3 left-3 bg-stone-900 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-widest">Best Seller</span>
+                </div>
+                
+                <!-- 缩略图选择 (点击切换主图，带当前状态高亮) -->
+                <div id="thumbnailContainer" class="grid grid-cols-4 gap-2">
+                    <button onclick="changeImage(this, 'ade7b39a-01dd-40e3-bb8e-af32d821998b.png')" class="aspect-square rounded-lg overflow-hidden border-2 border-stone-900 ring-2 ring-stone-900/10 focus:outline-none transition">
+                        <img src="ade7b39a-01dd-40e3-bb8e-af32d821998b.png" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeImage(this, '098a9145-e445-4819-9049-9b694ba3755d.png')" class="aspect-square rounded-lg overflow-hidden border-2 border-transparent hover:border-stone-300 focus:outline-none transition">
+                        <img src="098a9145-e445-4819-9049-9b694ba3755d.png" class="w-full h-full object-cover">
+                    </button>
+                    <button onclick="changeImage(this, 'edc5f35a-aa05-4b0e-a48a-0c0ad8bdf70d.png')" class="aspect-square rounded-lg overflow-hidden border-2 border-transparent hover:border-stone-300 focus:outline-none transition">
+                        <img src="edc5f35a-aa05-4b0e-a48a-0c0ad8bdf70d.png" class="w-full h-full object-cover">
+                    </button>
+                    <!-- 尺码图快捷预览缩略图 -->
+                    <button onclick="changeImage(this, 'c879495d75f7d37b4b7bffb1b31ffbb4.png')" class="aspect-square rounded-lg overflow-hidden border-2 border-transparent hover:border-stone-300 focus:outline-none transition relative">
+                        <img src="c879495d75f7d37b4b7bffb1b31ffbb4.png" class="w-full h-full object-cover filter brightness-75">
+                        <span class="absolute inset-0 flex items-center justify-center text-[9px] text-white font-bold uppercase text-center leading-tight">Size<br>Chart</span>
+                    </button>
+                </div>
+
+                <!-- 移动端交互说明 -->
+                <p class="text-center text-xs text-stone-400 mt-2 block md:hidden"><i class="fa-solid fa-arrows-left-right mr-1"></i> Tap thumbnails to preview details & colors</p>
+            </div>
+
+            <!-- 右侧：商品信息 & 规格选择 & 收货信息 -->
+            <div class="flex flex-col justify-between space-y-6">
+                <div>
+                    <!-- 商品标题 -->
+                    <h2 class="text-xl md:text-2xl font-bold tracking-tight text-stone-900 leading-snug">
+                        Comfortable Chest Binder for Daily Wear
+                    </h2>
+
+                    <!-- 评分与价格 (完美修改为 $49.90 美金) -->
+                    <div class="flex items-center justify-between mt-3 pb-4 border-b border-stone-100">
+                        <div class="flex items-center space-x-1">
+                            <div class="flex text-amber-400 text-xs">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <span class="text-xs font-semibold text-stone-500">(148 reviews)</span>
+                        </div>
+                        <div class="flex items-baseline space-x-2">
+                            <span class="text-2xl font-bold text-stone-900">$49.90</span>
+                            <span class="text-sm text-stone-400 line-through">$79.99</span>
+                        </div>
+                    </div>
+
+                    <!-- 核心优势精简卡片 -->
+                    <div class="grid grid-cols-2 gap-2 my-4 text-xs text-stone-600">
+                        <div class="flex items-center space-x-2 bg-stone-50/80 p-2 rounded-xl">
+                            <i class="fa-solid fa-wind text-stone-400 text-sm"></i>
+                            <span>Ultra Breathable</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-stone-50/80 p-2 rounded-xl">
+                            <i class="fa-solid fa-feather text-stone-400 text-sm"></i>
+                            <span>Soft & Seamless</span>
+                        </div>
+                    </div>
+
+                    <!-- 1. 颜色选择区 (交互换图机制) -->
+                    <div class="space-y-2 mt-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-bold tracking-wider text-stone-500 uppercase">1. Select Color</span>
+                            <span id="selectedColorLabel" class="text-xs font-semibold text-stone-900">Grey</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <!-- 灰色 -->
+                            <button onclick="selectColor(this, 'Grey', 'ade7b39a-01dd-40e3-bb8e-af32d821998b.png')" class="color-btn w-10 h-10 rounded-full bg-[#ccc] border-2 border-stone-900 ring-2 ring-stone-900/20 focus:outline-none transition relative" title="Grey">
+                                <i class="fa-solid fa-check text-stone-900 text-xs absolute inset-0 flex items-center justify-center"></i>
+                            </button>
+                            <!-- 黑色 -->
+                            <button onclick="selectColor(this, 'Black', '098a9145-e445-4819-9049-9b694ba3755d.png')" class="color-btn w-10 h-10 rounded-full bg-stone-950 border-2 border-transparent hover:border-stone-300 focus:outline-none transition relative" title="Black">
+                                <i class="fa-solid fa-check text-white text-xs absolute inset-0 flex items-center justify-center hidden"></i>
+                            </button>
+                            <!-- 白色 -->
+                            <button onclick="selectColor(this, 'White', 'edc5f35a-aa05-4b0e-a48a-0c0ad8bdf70d.png')" class="color-btn w-10 h-10 rounded-full bg-white border border-stone-200 hover:border-stone-300 focus:outline-none transition relative" title="White">
+                                <i class="fa-solid fa-check text-stone-900 text-xs absolute inset-0 flex items-center justify-center hidden"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2. 尺码选择区 (S 至 6XL) -->
+                    <div class="space-y-2 mt-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-bold tracking-wider text-stone-500 uppercase">2. Select Size</span>
+                            <!-- 尺码指南触发链接 -->
+                            <button onclick="openSizeModal()" class="text-xs font-semibold text-stone-600 underline hover:text-stone-900 transition">
+                                <i class="fa-solid fa-ruler-horizontal mr-1"></i> Size Guide
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-5 gap-1.5">
+                            <button onclick="selectSize(this, 'S')" class="size-btn py-2.5 border border-stone-200 rounded-xl text-xs font-semibold hover:border-stone-900 focus:outline-none transition bg-white text-stone-800">S</button>
+                            <button onclick="selectSize(this, 'M')" class="size-btn py-2.5 border border-stone-200 rounded-xl text-xs font-semibold hover:border-stone-900 focus:outline-none transition bg-white text-stone-800">M</button>
+                            <button onclick="selectSize(this, 'L')" class="size-btn py-2.5 border border-stone-200 rounded-xl text-xs font-semibold hover:border-stone-900 focus:outline-none transition bg-white text-stone-800">L</button>
+                            <button onclick="selectSize(this, 'XL')" class="size-btn py-2.5 border border-stone-200 rounded-xl text-xs font-semibold hover:border-stone-900 focus:outline-none transition bg-white text-stone-800">XL</button>
+                            <button onclick="selectSize(this, '2XL')" class="size-btn py-2.5 border border-stone-200 rounded-xl text-xs font-semibold hover:border-stone-900 focus:outline-none transition bg-white text-stone-800">2XL</button>
+                            <button onclick="selectSize(this, '3XL')" class="size-btn py-2.5 border border-stone-200 rounded-xl text-xs font-semibold hover:border-stone-900 focus:outline-none transition bg-white text-stone-800">3XL</button>
+                            <button onclick="selectSize(this, '4XL')" class="size-btn py-2.5 border border-stone-200 rounded-xl text-xs font-semibold hover:border-stone-900 focus:outline-none transition bg-white text-stone-800">4XL</button>
+                            <button onclick="selectSize(this, '5XL')" class="size-btn py-2.5 border border-stone-200 rounded-xl text-xs font-semibold hover:border-stone-900 focus:outline-none transition bg-white text-stone-800">5XL</button>
+                            <button onclick="selectSize(this, '6XL')" class="size-btn py-2.5 border border-stone-200 rounded-xl text-xs font-semibold hover:border-stone-900 focus:outline-none transition bg-white text-stone-800">6XL</button>
+                        </div>
+                        <p class="text-[11px] text-stone-400 mt-1"><i class="fa-solid fa-circle-info mr-1"></i> If you are between sizes, we recommend sizing up for a more comfortable fit.</p>
+                    </div>
+
+                    <!-- 3. 收货地址信息表单 -->
+                    <div class="mt-8 pt-6 border-t border-stone-100 space-y-4">
+                        <span class="text-xs font-bold tracking-wider text-stone-500 uppercase block">3. Shipping Information</span>
+                        
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-xs font-medium text-stone-500 mb-1">Full Name</label>
+                                <input type="text" id="shippingName" placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-stone-900 focus:ring-1 focus:ring-stone-900/15 outline-none transition text-sm bg-stone-50/50">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-xs font-medium text-stone-500 mb-1">Email Address (for order tracking)</label>
+                                <input type="email" id="shippingEmail" placeholder="your@email.com" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-stone-900 focus:ring-1 focus:ring-stone-900/15 outline-none transition text-sm bg-stone-50/50">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-medium text-stone-500 mb-1">Shipping Address</label>
+                                <input type="text" id="shippingAddress" placeholder="Street Address, Apt, Suite" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-stone-900 focus:ring-1 focus:ring-stone-900/15 outline-none transition text-sm bg-stone-50/50">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-medium text-stone-500 mb-1">City</label>
+                                    <input type="text" id="shippingCity" placeholder="City" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-stone-900 focus:ring-1 focus:ring-stone-900/15 outline-none transition text-sm bg-stone-50/50">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-stone-500 mb-1">State / Province</label>
+                                    <input type="text" id="shippingState" placeholder="State" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-stone-900 focus:ring-1 focus:ring-stone-900/15 outline-none transition text-sm bg-stone-50/50">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-medium text-stone-500 mb-1">ZIP / Postal Code</label>
+                                    <input type="text" id="shippingZip" placeholder="ZIP Code" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-stone-900 focus:ring-1 focus:ring-stone-900/15 outline-none transition text-sm bg-stone-50/50">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-medium text-stone-500 mb-1">Country</label>
+                                    <select id="shippingCountry" class="w-full px-4 py-3 rounded-xl border border-stone-200 focus:border-stone-900 focus:ring-1 focus:ring-stone-900/15 outline-none transition text-sm bg-stone-50/50 appearance-none">
+                                        <option value="United States">United States</option>
+                                        <option value="United Kingdom">United Kingdom</option>
+                                        <option value="Canada">Canada</option>
+                                        <option value="Australia">Australia</option>
+                                        <option value="Germany">Germany</option>
+                                        <option value="France">France</option>
+                                        <option value="Other">Other (Input in City/State)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 动态报错提示区 -->
+                    <div id="formErrorMessage" class="hidden text-xs text-red-500 font-semibold mt-3 p-3 bg-red-50 rounded-xl border border-red-100 flex items-center space-x-2">
+                        <i class="fa-solid fa-circle-exclamation text-sm"></i>
+                        <span id="errorMessageText">Please fill in all details.</span>
+                    </div>
+
+                    <!-- 4. 付款按钮 (自适应双重提交) -->
+                    <div class="mt-6">
+                        <button onclick="handleCheckout()" class="w-full py-4 rounded-xl bg-stone-950 text-white font-bold hover:bg-stone-900 active:scale-[0.98] transition flex items-center justify-center space-x-2 shadow-sm">
+                            <i class="fa-brands fa-paypal text-lg text-[#0070ba]"></i>
+                            <span>CONTINUE TO PAY WITH PAYPAL</span>
+                        </button>
+                        <div class="flex items-center justify-center space-x-4 mt-3 text-[10px] text-stone-400">
+                            <span><i class="fa-solid fa-lock mr-1"></i> SSL Encrypted Payment</span>
+                            <span>•</span>
+                            <span><i class="fa-solid fa-shield-halved mr-1"></i> PayPal Buyer Protection</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部特色说明 Q&A 区域 (极度增加买家信心) -->
+        <section class="mt-8 space-y-4">
+            <!-- 极简卖点徽章 (移除快速派送，主打全球隐私派送和单号追踪) -->
+            <div class="grid grid-cols-3 gap-3 text-center bg-white p-4 rounded-2xl border border-stone-100 shadow-sm">
+                <div>
+                    <div class="text-stone-900 mb-1"><i class="fa-solid fa-user-secret text-lg"></i></div>
+                    <h4 class="text-xs font-bold">100% Discrete</h4>
+                    <p class="text-[10px] text-stone-400 mt-0.5">Plain package, no labels</p>
+                </div>
+                <div>
+                    <div class="text-stone-900 mb-1"><i class="fa-solid fa-earth-americas text-lg"></i></div>
+                    <h4 class="text-xs font-bold">7–12 Business Days</h4>
+                    <p class="text-[10px] text-stone-400 mt-0.5">Global shipping available</p>
+                </div>
+                <div>
+                    <div class="text-stone-900 mb-1"><i class="fa-solid fa-square-envelope text-lg"></i></div>
+                    <h4 class="text-xs font-bold">Tracking Provided</h4>
+                    <p class="text-[10px] text-stone-400 mt-0.5">Tracking number via email</p>
+                </div>
+            </div>
+
+            <!-- 产品特色图文介绍 -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-100 shadow-sm space-y-4">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-stone-500">Why Choose Our Chest Binder?</h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                    Designed for everyday comfort, our binder provides flat chest compression without compromising on breathing comfort. The soft cotton-blend front lining avoids skin irritation, while the highly elastic grid mesh side panel ensures maximum ventilation during long days.
+                </p>
+                <div class="grid grid-cols-2 gap-3 text-xs text-stone-600">
+                    <div class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
+                        <span>No painful pressing on ribs</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
+                        <span>Completely seamless under shirts</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
+                        <span>Moisture-wicking, dry-fit mesh</span>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-green-500 mt-0.5"></i>
+                        <span>Won't stretch out after washing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 折叠 Q&A 问答区 (解决海外用户的退换、时效焦虑) -->
+            <div class="bg-white p-6 rounded-2xl border border-stone-100 shadow-sm space-y-3">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-stone-500 mb-1">Frequently Asked Questions</h3>
+                
+                <!-- 问答 1 -->
+                <div class="border-b border-stone-100 pb-3">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left text-xs font-semibold text-stone-800 focus:outline-none py-1">
+                        <span>How do I choose the correct size?</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-stone-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden text-[11px] text-stone-500 mt-2 leading-relaxed">
+                        Please check our Size Guide picture or popup above. We recommend using your body weight to find your exact match. If your weight is right on the boundary between two sizes, we highly recommend choosing the larger size for your ultimate safety and wearing comfort.
+                    </div>
+                </div>
+
+                <!-- 问答 2 -->
+                <div class="border-b border-stone-100 pb-3">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left text-xs font-semibold text-stone-800 focus:outline-none py-1">
+                        <span>How long will delivery take?</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-stone-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden text-[11px] text-stone-500 mt-2 leading-relaxed">
+                        We process and pack all orders in 1 to 3 business days. Delivery normally takes 7 to 12 business days depending on your country. You will automatically receive an email containing a universal tracking number once your package has shipped.
+                    </div>
+                </div>
+
+                <!-- 问答 3 -->
+                <div class="border-b border-stone-100 pb-3">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center text-left text-xs font-semibold text-stone-800 focus:outline-none py-1">
+                        <span>Is packaging discrete?</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-stone-400 transition-transform duration-200"></i>
+                    </button>
+                    <div class="faq-content hidden text-[11px] text-stone-500 mt-2 leading-relaxed">
+                        Yes, absolutely! All binders are shipped in generic grey bubble envelopes. The shipping label only states "Clothing" or "Daily wear" for customs declarations. Your absolute privacy is highly respected.
+                    </div>
+                </div>
+            </div>
+
+            <!-- 页脚 -->
+            <footer class="text-center py-8 text-stone-400 text-xs">
+                <p>© 2026 TRUE SELF. All Rights Reserved.</p>
+                <p class="mt-2">Need Help? Contact us: <a href="mailto:yourname@gmail.com" class="underline hover:text-stone-600">yourname@gmail.com</a></p>
+            </footer>
+        </section>
+
+    </main>
+
+    <!-- 弹窗 1：尺码指南 (Size Guide Modal) -->
+    <div id="sizeModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300">
+            <!-- 头部 -->
+            <div class="px-6 py-4 border-b border-stone-100 flex justify-between items-center bg-stone-50">
+                <h3 class="font-bold text-stone-900 flex items-center space-x-2 text-sm">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    <span>FIND YOUR PERFECT FIT</span>
+                </h3>
+                <button onclick="closeSizeModal()" class="w-8 h-8 rounded-full bg-stone-200/50 hover:bg-stone-200 flex items-center justify-center text-stone-600 focus:outline-none transition">
+                    <i class="fa-solid fa-xmark text-xs"></i>
+                </button>
+            </div>
+            <!-- 高画质尺码表图片加载区 -->
+            <div class="p-4 bg-white flex flex-col items-center">
+                <div class="w-full overflow-hidden rounded-xl border border-stone-100">
+                    <img src="c879495d75f7d37b4b7bffb1b31ffbb4.png" alt="Size Chart" class="w-full h-auto object-contain">
+                </div>
+                <div class="mt-4 p-3 bg-amber-50 rounded-xl border border-amber-100 text-[11px] text-amber-800 leading-relaxed w-full">
+                    <i class="fa-solid fa-triangle-exclamation mr-1"></i>
+                    <strong>Caution:</strong> Do not intentionally choose a size smaller. Binders are already highly compressed. Your health and comfort are our top priority.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 弹窗 2：付款及订单汇总弹窗 -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden transition-opacity duration-300 opacity-0">
+        <div class="bg-white rounded-3xl w-full max-w-md overflow-hidden shadow-2xl transform scale-95 transition-transform duration-300">
+            <!-- 头部 -->
+            <div class="px-6 py-4 border-b border-stone-100 flex justify-between items-center bg-green-50">
+                <h3 class="font-bold text-green-900 flex items-center space-x-2 text-sm">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>SECURE CHECKOUT</span>
+                </h3>
+                <button onclick="closeCheckoutModal()" class="w-8 h-8 rounded-full bg-green-200/50 hover:bg-green-200 flex items-center justify-center text-green-800 focus:outline-none transition">
+                    <i class="fa-solid fa-xmark text-xs"></i>
+                </button>
+            </div>
+            
+            <!-- 弹窗内容 -->
+            <div class="p-6 space-y-5">
+                <!-- 步骤 1 提示 -->
+                <div class="space-y-2">
+                    <span class="text-[10px] font-bold tracking-wider text-green-700 uppercase bg-green-100 px-2 py-0.5 rounded-md">Step 1: Save Your Shipping Info</span>
+                    <h4 class="text-xs font-bold text-stone-800">Please click below to email your order choices & address to us.</h4>
+                    <p class="text-[11px] text-stone-400">This automatically composes an email draft to us, ensuring we have your correct shipping address and size choice.</p>
+                    
+                    <button onclick="sendOrderEmail()" class="w-full py-3 rounded-xl bg-stone-900 text-white hover:bg-stone-800 text-xs font-bold transition flex items-center justify-center space-x-2 shadow-sm">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>1. SEND SHIPPING DETAILS BY EMAIL</span>
+                    </button>
+                </div>
+
+                <div class="border-t border-dashed border-stone-200 my-4"></div>
+
+                <!-- 步骤 2 提示 -->
+                <div class="space-y-2">
+                    <span class="text-[10px] font-bold tracking-wider text-stone-500 uppercase bg-stone-100 px-2 py-0.5 rounded-md">Step 2: Pay on PayPal</span>
+                    <h4 class="text-xs font-bold text-stone-800">After sending the email, click below to complete your payment on PayPal.</h4>
+                    <p class="text-[11px] text-stone-400">Please include your name in the PayPal notes if possible so we can match your payment easily.</p>
+                    
+                    <button onclick="goToPayPal()" class="w-full py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-stone-900 text-xs font-bold transition flex items-center justify-center space-x-2 shadow-sm">
+                        <i class="fa-brands fa-paypal text-sm text-[#003087]"></i>
+                        <span>2. PAY $49.90 WITH PAYPAL NOW</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="px-6 py-4 bg-stone-50 border-t border-stone-100 text-center text-[10px] text-stone-400">
+                <i class="fa-solid fa-shield-heart mr-1"></i> Your personal details are completely secure.
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 交互 JS 核心逻辑 -->
+    <script>
+        // ================= 1. 全局配置 =================
+        const sellerConfig = {
+            email: "yourname@gmail.com", 
+            paypalLink: "https://www.paypal.me/yourusername/49.90USD" 
+        };
+
+        // ================= 2. 用户规格选择状态 (默认灰色) =================
+        let orderState = {
+            color: "Grey", 
+            size: ""        
+        };
+
+        // ================= 3. 主图相册切换 =================
+        function changeImage(element, src) {
+            const mainImg = document.getElementById('mainImage');
+            if (mainImg) {
+                mainImg.src = src;
+            }
+
+            // 移除其他缩略图的激活高亮
+            const thumbnails = element.parentElement.getElementsByTagName('button');
+            for (let btn of thumbnails) {
+                btn.classList.remove('border-stone-900', 'ring-2', 'ring-stone-900/10');
+                btn.classList.add('border-transparent');
+            }
+            // 激活当前缩略图高亮
+            element.classList.remove('border-transparent');
+            element.classList.add('border-stone-900', 'ring-2', 'ring-stone-900/10');
+        }
+
+        // ================= 4. 颜色切换 (联动换图机制) =================
+        function selectColor(element, colorName, imageSrc) {
+            orderState.color = colorName;
+            const label = document.getElementById('selectedColorLabel');
+            if (label) {
+                label.innerText = colorName;
+            }
+
+            // 取消其他颜色按钮的勾选效果
+            const buttons = document.getElementsByClassName('color-btn');
+            for (let btn of buttons) {
+                const checkIcon = btn.querySelector('.fa-check');
+                if (checkIcon) {
+                    checkIcon.classList.add('hidden');
+                }
+                btn.classList.remove('ring-2', 'ring-stone-900/20', 'border-stone-900');
+                btn.classList.add('border-transparent');
+            }
+            
+            // 激活当前颜色按钮
+            const checkIcon = element.querySelector('.fa-check');
+            if (checkIcon) {
+                checkIcon.classList.remove('hidden');
+            }
+            element.classList.remove('border-transparent');
+            element.classList.add('ring-2', 'ring-stone-900/20', 'border-stone-900');
+
+            // 联动主图和缩略图
+            if (imageSrc) {
+                const mainImg = document.getElementById('mainImage');
+                if (mainImg) {
+                    mainImg.src = imageSrc;
+                }
+                syncThumbnail(imageSrc);
+            }
+        }
+
+        // ================= 5. 缩略图跟动高亮 =================
+        function syncThumbnail(src) {
+            const thumbContainer = document.getElementById('thumbnailContainer');
+            if (!thumbContainer) return;
+            const buttons = thumbContainer.getElementsByTagName('button');
+            for (let btn of buttons) {
+                const img = btn.querySelector('img');
+                if (img && img.getAttribute('src') === src) {
+                    btn.classList.remove('border-transparent');
+                    btn.classList.add('border-stone-900', 'ring-2', 'ring-stone-900/10');
+                } else {
+                    btn.classList.remove('border-stone-900', 'ring-2', 'ring-stone-900/10');
+                    btn.classList.add('border-transparent');
+                }
+            }
+        }
+
+        // ================= 6. 尺码切换 =================
+        function selectSize(element, sizeName) {
+            orderState.size = sizeName;
+
+            // 取消其他尺码按钮的高亮样式
+            const buttons = document.getElementsByClassName('size-btn');
+            for (let btn of buttons) {
+                btn.classList.remove('bg-stone-900', 'text-white', 'border-stone-900');
+                btn.classList.add('bg-white', 'text-stone-800', 'border-stone-200');
+            }
+            // 激活当前尺码按钮
+            element.classList.remove('bg-white', 'text-stone-800', 'border-stone-200');
+            element.classList.add('bg-stone-900', 'text-white', 'border-stone-900');
+            
+            // 隐藏可能残留的尺码报错信息
+            const errBox = document.getElementById('formErrorMessage');
+            if (errBox) {
+                errBox.classList.add('hidden');
+            }
+        }
+
+        // ================= 7. 弹窗控制 =================
+        function openSizeModal() {
+            const modal = document.getElementById('sizeModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modal.querySelector('div').classList.remove('scale-95');
+                }, 10);
+            }
+        }
+
+        function closeSizeModal() {
+            const modal = document.getElementById('sizeModal');
+            if (modal) {
+                modal.classList.add('opacity-0');
+                modal.querySelector('div').classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function openCheckoutModal() {
+            const modal = document.getElementById('checkoutModal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modal.querySelector('div').classList.remove('scale-95');
+                }, 10);
+            }
+        }
+
+        function closeCheckoutModal() {
+            const modal = document.getElementById('checkoutModal');
+            if (modal) {
+                modal.classList.add('opacity-0');
+                modal.querySelector('div').classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        // ================= 8. 收货信息验证与邮件提交 =================
+        function handleCheckout() {
+            const errBox = document.getElementById('formErrorMessage');
+            const errMsg = document.getElementById('errorMessageText');
+
+            if (!errBox || !errMsg) return;
+
+            // 1. 校验规格 (尺码是否已选)
+            if (!orderState.size) {
+                errMsg.innerText = "Please select your Size (S to 6XL) before continuing.";
+                errBox.classList.remove('hidden');
+                return;
+            }
+
+            // 2. 校验收货人信息
+            const name = document.getElementById('shippingName').value.trim();
+            const email = document.getElementById('shippingEmail').value.trim();
+            const address = document.getElementById('shippingAddress').value.trim();
+            const city = document.getElementById('shippingCity').value.trim();
+            const state = document.getElementById('shippingState').value.trim();
+            const zip = document.getElementById('shippingZip').value.trim();
+
+            if (!name || !email || !address || !city || !state || !zip) {
+                errMsg.innerText = "Please complete all fields in the Shipping Information section.";
+                errBox.classList.remove('hidden');
+                return;
+            }
+
+            // 3. 邮箱格式简易校验
+            if (!email.includes('@')) {
+                errMsg.innerText = "Please enter a valid email address.";
+                errBox.classList.remove('hidden');
+                return;
+            }
+
+            // 校验全部通过，隐藏错误盒
+            errBox.classList.add('hidden');
+
+            // 打开购买弹窗
+            openCheckoutModal();
+        }
+
+        // 步骤一：调起客户端邮件发送订单明细
+        function sendOrderEmail() {
+            const name = document.getElementById('shippingName').value.trim();
+            const email = document.getElementById('shippingEmail').value.trim();
+            const address = document.getElementById('shippingAddress').value.trim();
+            const city = document.getElementById('shippingCity').value.trim();
+            const state = document.getElementById('shippingState').value.trim();
+            const zip = document.getElementById('shippingZip').value.trim();
+            const country = document.getElementById('shippingCountry').value;
+
+            // 组装邮件内容 (完美修改为 $49.90 USD)
+            const subject = encodeURIComponent(`[NEW ORDER] Chest Binder - ${name}`);
+            const body = encodeURIComponent(
+                `Hi True Self,\n\n` +
+                `I have submitted my order details below. I am proceeding to make my payment on PayPal now.\n\n` +
+                `--- ORDER SPECIFICATIONS ---\n` +
+                `Product: Comfortable Chest Binder for Daily Wear\n` +
+                `Selected Color: ${orderState.color}\n` +
+                `Selected Size: ${orderState.size}\n` +
+                `Price: $49.90 USD\n\n` +
+                `--- SHIPPING DETAILS ---\n` +
+                `Recipient Name: ${name}\n` +
+                `Contact Email: ${email}\n` +
+                `Address: ${address}\n` +
+                `City: ${city}\n` +
+                `State/Province: ${state}\n` +
+                `ZIP Code: ${zip}\n` +
+                `Country: ${country}\n\n` +
+                `Thank you!`
+            );
+
+            // 调起本地邮件软件
+            window.location.href = `mailto:${sellerConfig.email}?subject=${subject}&body=${body}`;
+        }
+
+        // 步骤二：跳转到 PayPal
+        function goToPayPal() {
+            window.open(sellerConfig.paypalLink, '_blank');
+        }
+
+        // ================= 9. FAQ 折叠手风琴逻辑 =================
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            if (content && icon) {
+                if (content.classList.contains('hidden')) {
+                    content
