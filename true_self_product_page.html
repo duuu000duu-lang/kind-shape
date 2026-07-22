@@ -35,6 +35,13 @@
             border-radius: 4px;
             margin-bottom: 10px;
         }
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
         h1 {
             font-size: 24px;
             margin-bottom: 10px;
@@ -67,6 +74,24 @@
             border-radius: 6px;
             font-size: 14px;
         }
+        .size-options {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .size-btn {
+            padding: 10px 16px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .size-btn.active {
+            border-color: #ff4757;
+            color: #ff4757;
+            background: #fff5f5;
+        }
         .btn-paypal {
             width: 100%;
             background-color: #ffc439;
@@ -98,8 +123,23 @@
 
 <div class="container">
     <div class="badge">BEST SELLER</div>
+    <!-- 请把 src="您的图片链接" 替换为您实际的商品图片地址 -->
+    <img src="https://via.placeholder.com/600x600" alt="Product Main Image" class="product-image">
+    
     <h1>Comfortable Chest Binder for Daily Wear</h1>
     <div class="price">$49.90 <span>$79.99</span></div>
+
+    <div class="form-group">
+        <label>选择尺码 (Select Size)</label>
+        <div class="size-options">
+            <button type="button" class="size-btn active">S</button>
+            <button type="button" class="size-btn">M</button>
+            <button type="button" class="size-btn">L</button>
+            <button type="button" class="size-btn">XL</button>
+            <button type="button" class="size-btn">2XL</button>
+            <button type="button" class="size-btn">3XL</button>
+        </div>
+    </div>
 
     <div class="form-group">
         <label>收件人姓名 (Full Name)</label>
@@ -135,13 +175,10 @@
         <label>国家/地区 (Country)</label>
         <select name="country">
             <option value="" disabled selected>请选择国家/地区 / Select Country</option>
-            <!-- 热门/大中华区 -->
             <option value="CN">中国 (China)</option>
             <option value="HK">中国香港 (Hong Kong)</option>
             <option value="MO">中国澳门 (Macao)</option>
             <option value="TW">中国台湾 (Taiwan)</option>
-            
-            <!-- 东南亚 -->
             <option value="SG">新加坡 (Singapore)</option>
             <option value="MY">马来西亚 (Malaysia)</option>
             <option value="TH">泰国 (Thailand)</option>
@@ -152,18 +189,12 @@
             <option value="MM">缅甸 (Myanmar)</option>
             <option value="BN">文莱 (Brunei)</option>
             <option value="LA">老挝 (Laos)</option>
-            
-            <!-- 东亚及南亚 -->
             <option value="JP">日本 (Japan)</option>
             <option value="KR">韩国 (South Korea)</option>
             <option value="IN">印度 (India)</option>
-            
-            <!-- 北美洲 -->
             <option value="US">美国 (United States)</option>
             <option value="CA">加拿大 (Canada)</option>
             <option value="MX">墨西哥 (Mexico)</option>
-            
-            <!-- 欧洲 -->
             <option value="GB">英国 (United Kingdom)</option>
             <option value="DE">德国 (Germany)</option>
             <option value="FR">法国 (France)</option>
@@ -172,12 +203,8 @@
             <option value="NL">荷兰 (Netherlands)</option>
             <option value="CH">瑞士 (Switzerland)</option>
             <option value="SE">瑞典 (Sweden)</option>
-            
-            <!-- 大洋洲 -->
             <option value="AU">澳大利亚 (Australia)</option>
             <option value="NZ">新西兰 (New Zealand)</option>
-            
-            <!-- 其他/全球通用 -->
             <option value="OTHER">其他国家/地区 (Other Worldwide)</option>
         </select>
     </div>
