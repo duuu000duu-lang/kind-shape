@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,15 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
+        .banner {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            font-size: 13px;
+            padding: 8px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
         .badge {
             display: inline-block;
             background: #ff4757;
@@ -35,25 +44,37 @@
             border-radius: 4px;
             margin-bottom: 10px;
         }
-        .product-image {
+        .gallery {
+            margin-bottom: 20px;
+        }
+        .main-img {
             width: 100%;
             height: auto;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             object-fit: cover;
         }
         h1 {
             font-size: 24px;
             margin-bottom: 10px;
         }
+        .rating {
+            color: #f39c12;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .rating span {
+            color: #777;
+            margin-left: 5px;
+        }
         .price {
-            font-size: 22px;
+            font-size: 24px;
             color: #ff4757;
             font-weight: bold;
             margin-bottom: 20px;
         }
         .price span {
-            font-size: 14px;
+            font-size: 16px;
             color: #999;
             text-decoration: line-through;
             margin-left: 10px;
@@ -75,22 +96,28 @@
             font-size: 14px;
         }
         .size-options {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 8px;
-            flex-wrap: wrap;
         }
         .size-btn {
-            padding: 10px 16px;
+            padding: 10px;
             border: 1px solid #ddd;
             background: #fff;
             border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
+            text-align: center;
         }
         .size-btn.active {
             border-color: #ff4757;
             color: #ff4757;
             background: #fff5f5;
+        }
+        .size-tip {
+            font-size: 12px;
+            color: #666;
+            margin-top: 6px;
         }
         .btn-paypal {
             width: 100%;
@@ -107,6 +134,23 @@
         .btn-paypal:hover {
             background-color: #f4bb33;
         }
+        .features {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .features h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .features ul {
+            list-style: none;
+        }
+        .features li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+        }
         footer {
             text-align: center;
             margin-top: 30px;
@@ -122,15 +166,25 @@
 <body>
 
 <div class="container">
+    <div class="banner">⚡ FREE Worldwide Shipping on All Orders This Week!</div>
+    
     <div class="badge">BEST SELLER</div>
-    <!-- 请把 src="您的图片链接" 替换为您实际的商品图片地址 -->
-    <img src="https://via.placeholder.com/600x600" alt="Product Main Image" class="product-image">
+    
+    <div class="gallery">
+        <img src="https://via.placeholder.com/600x600" alt="Comfortable Chest Binder" class="main-img">
+    </div>
     
     <h1>Comfortable Chest Binder for Daily Wear</h1>
+    
+    <div class="rating">
+        ★★★★★ <span>(148 Reviews)</span>
+    </div>
+
     <div class="price">$49.90 <span>$79.99</span></div>
 
+    <!-- 尺码选择 -->
     <div class="form-group">
-        <label>选择尺码 (Select Size)</label>
+        <label>2. Select Size / 选择尺寸</label>
         <div class="size-options">
             <button type="button" class="size-btn active">S</button>
             <button type="button" class="size-btn">M</button>
@@ -138,83 +192,112 @@
             <button type="button" class="size-btn">XL</button>
             <button type="button" class="size-btn">2XL</button>
             <button type="button" class="size-btn">3XL</button>
+            <button type="button" class="size-btn">4XL</button>
+            <button type="button" class="size-btn">5XL</button>
+            <button type="button" class="size-btn">6XL</button>
         </div>
+        <div class="size-tip">ℹ️ If you are between sizes, we recommend choosing the larger size for a more comfortable wear experience.</div>
+    </div>
+
+    <!-- 订单信息表单 -->
+    <div class="form-group">
+        <label>Full Name / 收件人姓名</label>
+        <input type="text" placeholder="John Doe">
     </div>
 
     <div class="form-group">
-        <label>收件人姓名 (Full Name)</label>
-        <input type="text" placeholder="请输入您的姓名">
+        <label>Email Address (For Order Tracking) / 电子邮箱地址</label>
+        <input type="email" value="your@email.com">
     </div>
 
     <div class="form-group">
-        <label>电子邮箱地址（用于订单跟踪）</label>
-        <input type="email" value="duuu000duu@gmail.com">
+        <label>Shipping Address / 收件地址</label>
+        <input type="text" placeholder="Street address, apartment, suite">
     </div>
 
     <div class="form-group">
-        <label>收件地址 (Shipping Address)</label>
-        <input type="text" placeholder="请输入街道地址">
+        <label>City / 城市</label>
+        <input type="text" placeholder="City">
     </div>
 
     <div class="form-group">
-        <label>城市 (City)</label>
-        <input type="text" placeholder="请输入城市">
+        <label>State / Province / 州/省</label>
+        <input type="text" placeholder="State / Province">
     </div>
 
     <div class="form-group">
-        <label>州/省 (State / Province)</label>
-        <input type="text" placeholder="请输入州/省">
+        <label>ZIP / Postal Code / 邮政编码</label>
+        <input type="text" placeholder="ZIP / Postal Code">
     </div>
 
+    <!-- 全球及东南亚国家/地区列表 -->
     <div class="form-group">
-        <label>邮编/邮政编码 (ZIP / Postal Code)</label>
-        <input type="text" placeholder="请输入邮编">
-    </div>
-
-    <div class="form-group">
-        <label>国家/地区 (Country)</label>
+        <label>Country / 国家/地区</label>
         <select name="country">
-            <option value="" disabled selected>请选择国家/地区 / Select Country</option>
-            <option value="CN">中国 (China)</option>
-            <option value="HK">中国香港 (Hong Kong)</option>
-            <option value="MO">中国澳门 (Macao)</option>
-            <option value="TW">中国台湾 (Taiwan)</option>
-            <option value="SG">新加坡 (Singapore)</option>
-            <option value="MY">马来西亚 (Malaysia)</option>
-            <option value="TH">泰国 (Thailand)</option>
-            <option value="VN">越南 (Vietnam)</option>
-            <option value="ID">印度尼西亚 (Indonesia)</option>
-            <option value="PH">菲律宾 (Philippines)</option>
-            <option value="KH">柬埔寨 (Cambodia)</option>
-            <option value="MM">缅甸 (Myanmar)</option>
-            <option value="BN">文莱 (Brunei)</option>
-            <option value="LA">老挝 (Laos)</option>
-            <option value="JP">日本 (Japan)</option>
-            <option value="KR">韩国 (South Korea)</option>
-            <option value="IN">印度 (India)</option>
-            <option value="US">美国 (United States)</option>
-            <option value="CA">加拿大 (Canada)</option>
-            <option value="MX">墨西哥 (Mexico)</option>
-            <option value="GB">英国 (United Kingdom)</option>
-            <option value="DE">德国 (Germany)</option>
-            <option value="FR">法国 (France)</option>
-            <option value="IT">意大利 (Italy)</option>
-            <option value="ES">西班牙 (Spain)</option>
-            <option value="NL">荷兰 (Netherlands)</option>
-            <option value="CH">瑞士 (Switzerland)</option>
-            <option value="SE">瑞典 (Sweden)</option>
-            <option value="AU">澳大利亚 (Australia)</option>
-            <option value="NZ">新西兰 (New Zealand)</option>
-            <option value="OTHER">其他国家/地区 (Other Worldwide)</option>
+            <option value="" disabled selected>Select Country / 请选择国家/地区</option>
+            <!-- 热门 / 大中华区 -->
+            <option value="US">United States (美国)</option>
+            <option value="CN">China (中国)</option>
+            <option value="HK">Hong Kong (中国香港)</option>
+            <option value="MO">Macao (中国澳门)</option>
+            <option value="TW">Taiwan (中国台湾)</option>
+            
+            <!-- 东南亚 -->
+            <option value="SG">Singapore (新加坡)</option>
+            <option value="MY">Malaysia (马来西亚)</option>
+            <option value="TH">Thailand (泰国)</option>
+            <option value="VN">Vietnam (越南)</option>
+            <option value="ID">Indonesia (印度尼西亚)</option>
+            <option value="PH">Philippines (菲律宾)</option>
+            <option value="KH">Cambodia (柬埔寨)</option>
+            <option value="MM">Myanmar (缅甸)</option>
+            <option value="BN">Brunei (文莱)</option>
+            <option value="LA">Laos (老挝)</option>
+            
+            <!-- 东亚及南亚 -->
+            <option value="JP">Japan (日本)</option>
+            <option value="KR">South Korea (韩国)</option>
+            <option value="IN">India (印度)</option>
+            
+            <!-- 北美洲 -->
+            <option value="CA">Canada (加拿大)</option>
+            <option value="MX">Mexico (墨西哥)</option>
+            
+            <!-- 欧洲 -->
+            <option value="GB">United Kingdom (英国)</option>
+            <option value="DE">Germany (德国)</option>
+            <option value="FR">France (法国)</option>
+            <option value="IT">Italy (意大利)</option>
+            <option value="ES">Spain (西班牙)</option>
+            <option value="NL">Netherlands (荷兰)</option>
+            <option value="CH">Switzerland (瑞士)</option>
+            <option value="SE">Sweden (瑞典)</option>
+            
+            <!-- 大洋洲 -->
+            <option value="AU">Australia (澳大利亚)</option>
+            <option value="NZ">New Zealand (新西兰)</option>
+            
+            <!-- 其他全球送达地区 -->
+            <option value="OTHER">Other Worldwide / 其他国家或地区</option>
         </select>
     </div>
 
-    <button class="btn-paypal">继续使用 PayPal 付款 / Continue to PayPal</button>
+    <button class="btn-paypal">Continue to PayPal / 继续使用 PayPal 付款</button>
+    
+    <div class="features">
+        <h3>Why Choose Our Binder?</h3>
+        <ul>
+            <li>✔️ No painful pressure on ribs</li>
+            <li>✔️ Completely seamless and trace-free</li>
+            <li>✔️ Moisture-wicking, fast-drying mesh fabric</li>
+            <li>✔️ Retains shape after washing</li>
+        </ul>
+    </div>
 </div>
 
 <footer>
     <p>© 2026 KIND & SHAPE. All Rights Reserved.</p>
-    <p>需要帮助？请联系我们： <a href="mailto:duuu000duu@gmail.com">duuu000duu@gmail.com</a></p>
+    <p>Need help? Contact us: <a href="mailto:yourname@gmail.com">yourname@gmail.com</a></p>
 </footer>
 
 </body>
